@@ -8,4 +8,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
  
+  def friend_emails
+    friends.map{|e| e.email}
+  end
+
 end
